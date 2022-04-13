@@ -1,0 +1,140 @@
+import java.util.Scanner;
+//Scanner being imported
+class Main 
+{
+  static int[] METH(int NUMBER) 
+  {
+    int bit1=0;
+    int bit2=0;
+    int bit3=0;
+    int bit4=0;
+    int bit5=0;
+    int bit6=0;
+    int bit7=0;
+    int bit8=0;
+    int bit9=0;
+    int bit10=0;
+    int bit11=0;
+    int bit12=0;
+    int bit13=0;
+    int bit14=0;
+    int bit15=0;
+    int bit16=0;
+    //declairing my variables
+    if (NUMBER>32768)
+    {
+      NUMBER = NUMBER-32768;
+      bit16=1;
+    }
+    if (NUMBER>16384)
+    {
+      NUMBER = NUMBER-16384;
+      bit15=1;
+    }
+    if (NUMBER>8192)
+    {
+      NUMBER = NUMBER-8192;
+      bit14=1;
+    }
+    if (NUMBER>4096)
+    {
+      NUMBER = NUMBER-4096;
+      bit13=1;
+    }
+    if (NUMBER>2048)
+    {
+      NUMBER = NUMBER-2048;
+      bit12=1;
+    }
+    if (NUMBER>1024)
+    {
+      NUMBER = NUMBER-1024;
+      bit11=1;
+    }
+    if (NUMBER>512)
+    {
+      NUMBER = NUMBER-512;
+      bit10=1;
+    }
+    if (NUMBER>256)
+    {
+      NUMBER = NUMBER-256;
+      bit9=1;
+    }
+    if (NUMBER>128)
+    {
+      NUMBER = NUMBER-128;
+      bit8=1;
+    }
+    if (NUMBER>64)
+    {
+      NUMBER = NUMBER-64;
+      bit7=1;
+    }
+    if (NUMBER>32)
+    {
+      NUMBER = NUMBER-32;
+      bit6=1;
+    }
+    if (NUMBER>16)
+    {
+      NUMBER = NUMBER-16;
+      bit5=1;
+    }
+    if (NUMBER>8)
+    {
+      NUMBER = NUMBER-8;
+      bit4=1;
+    }
+    if (NUMBER>4)
+    {
+      NUMBER = NUMBER-4;
+      bit3=1;
+    }
+    if (NUMBER>2)
+    {
+      NUMBER = NUMBER-2;
+      bit2=1;
+    }
+    if (NUMBER==1)
+    {
+      NUMBER = NUMBER-1;
+      bit1=1;
+    }
+    //these if statements look if it's higher than a certain power of two, and if it is it, it subtracts that number from the number it was checking, then changes a 0 to a 1.
+    int Binary[]={bit16, bit15, bit14, bit13, bit12, bit11, bit10, bit9, bit8, bit7, bit6, bit5, bit4, bit3, bit2, bit1};
+    return Binary;
+  }
+  //my method, it converts the number to provided into a Binary type format that is used to convert it to Binary
+  public static void main(String[] args) 
+  {
+    Scanner Qeustions = new Scanner(System.in);
+    //declaring my scanner
+    try
+    {
+    //try for later closing the scanner
+      int Number = 0;
+      //declaring my only variable that is in the main method
+      System.out.println("THE BIGGEST NUMBER YOU CAN USE HERE IS 65,536, SO PLEASE DON'T GO OVER THAT.\nWith that being said, what number would you like to input?");
+      Number=Qeustions.nextInt();
+      if (Number>65536)
+      {
+        System.out.println("I told you not to do that.");
+      }
+      else if (Number>0)
+      {
+        int Binary[] = METH(Number);
+        System.out.println(Binary[0]+" "+Binary[1]+" "+Binary[2]+" "+Binary[3]+" "+Binary[4]+" "+Binary[5]+" "+Binary[6]+" "+Binary[7]+" "+Binary[8]+" "+Binary[9]+" "+Binary[10]+" "+Binary[11]+" "+Binary[12]+" "+Binary[13]+" "+Binary[14]+" "+Binary[15]);
+        //prints out the answer from my Method.
+      }
+      else
+      {
+        System.out.println("you made a mistake");
+      }
+    }
+    finally 
+    {
+      Qeustions.close();//this is the scanner closing
+    }
+  }
+}
